@@ -21,12 +21,14 @@ def home():
         file_name = file.filename
         file_data = file.read()
 
-        # if not file_name.endswith('.xlsx') and not file_name.endswith('.xls'):
-        #     return render_template("index.html", status=input_id)
-
-        data = pd.read_excel(io.BytesIO(file_data), engine='xlrd')
-
-        print(data)
+        if file_name == None:
+            return render_template("index.html", message='No file selected')
+        elif not file_name.endswith('.xlsx') and not file_name.endswith('.xls'):
+            return render_template("index.html", message='Invalid file format. Please upload an Excel file.')
+        else:
+            data = pd.read_excel(io.BytesIO(file_data), engine='xlrd')
+            print(data)
+            return render_template("index.html", success_message='File Uplaoded Successfully!')
     return render_template("index.html")
 
 if __name__ == "__main__":

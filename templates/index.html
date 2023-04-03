@@ -11,7 +11,16 @@
 
 </head>
 <body>
-    
+    {% if message %}
+    <script>
+        alert('{{ message }}');
+    </script>
+    {% endif %}
+    {% if success_message %}
+  <script>
+    alert('{{ success_message }}');
+  </script>
+  {% endif %}
    <div class="box">
     <div class="container">
 
