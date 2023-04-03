@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/styleseet.css') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>File Upload Login</title>
+
+</head>
+<body>
+    
+   <div class="box">
+    <div class="container">
+
+        <div class="top">
+
+            <header>File Uplaod</header>
+        </div>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="input-field">
+                <input type="text" class="input" placeholder="Your ID Number" id="">
+                <br>
+                <input type="file" id="file" accept=".xlsx, .xls">
+            </div>
+            <br>
+            <div class="input-field">
+                <input type="submit" class="submit" value="Submit" id="">
+            </div>
+        </form>
+        <br>
+        <br>
+        <div class="about">
+            <span>{{ status }}</span>
+        </div>
+
+    </div>
+</div>  
+</body>
+</html>
